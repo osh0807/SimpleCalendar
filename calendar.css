@@ -1,0 +1,210 @@
+/* template from : https://www.w3schools.com/howto/howto_css_calendar.asp */
+
+h1 {
+  text-align: center;
+}
+
+ul {list-style-type: none;}
+
+body {
+  background-color: #fcfbfc;
+}
+
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #f5e7f5;
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+.days {
+  font-family: 'Open Sans', sans-serif;
+}
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+button, input {
+  font-family: 'Open Sans', sans-serif;
+  color: #8b959c;
+}
+
+button {
+  border: #8b959c solid 1px;
+}
+
+
+
+/* Next button */
+.month {
+    float: right;
+    padding: 20px;
+}
+
+#next_month_btn {
+
+    float: right;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#size {
+  font-size: 2em;
+}
+
+button:hover {
+  color: white;
+  background: #8b959c;
+}
+
+#prev_month_btn {
+
+    float: left;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+#day {
+    color: black;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    background-color:#f8f8f8;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #aab2b8;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#invite_btn {
+  float: right;
+}
+
+#eventbox {
+  background-color: rgba(179, 197, 211, .2);
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #ffffff;
+    margin: 0;
+}
+
+@media (max-width: 1042px) {
+  .days, .weekdays{
+  overflow-x: scroll;
+  width: 1042px;
+  }
+}
+
+#logout_btn {
+  float: right;
+}
+
+.box {
+  margin-left: 5px;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #aab2b8;
+    height: 150px;
+    overflow-y: scroll;
+    margin-right: 5px;
+    border: #e0e0e0 solid 1px;
+    vertical-align: top;
+}
+
+
+
+
+
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "sidebar"
+                       "content";
+  width: 100vw; /* unnecessary, but let's keep things consistent */
+  height: 100vh;
+}
+
+main {
+  grid-area: content;
+  padding: 48px;
+}
+
+.calendar__week,
+.calendar__header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);  
+}
+.calendar__week {
+  grid-auto-rows: 100px;
+  text-align: right;
+}
+
+.calendar__header {
+  grid-auto-rows: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar__day {
+  padding: 16px;
+}
+
+body {
+  font-family: Montserrat;
+  font-weight: 100;
+  color: #A8B2B9;
+}
+
+main {
+  background-color: #FCFBFC;
+}
+
+.calendar {
+  background-color: white;
+  border: 1px solid #e1e1e1;
+}
+
+.calendar__header > div {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.calendar__day {
+  border-right: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+}
+
+.calendar__day:last-child {
+  border-right: 0;
+}

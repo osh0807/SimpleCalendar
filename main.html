@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>main</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='calendar.css'>
+  <style>
+    div.logout {
+      display: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 50%;
+      vertical-align: top;
+    }
+
+    th,
+    td {
+      height: 70px;
+    }
+
+    body {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-rows: 70px 1fr 70px;
+      grid-template-columns: 1fr;
+      grid-template-areas: "sidebar"
+        "content";
+      width: 100vw;
+      /* unnecessary, but let's keep things consistent */
+      height: 100vh;
+    }
+
+    main {
+      grid-area: content;
+      padding: 48px;
+    }
+
+    .calendar__week,
+    .calendar__header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .calendar__week {
+      grid-auto-rows: 100px;
+      text-align: right;
+    }
+
+    .calendar__header {
+      grid-auto-rows: 50px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .calendar__day {
+      padding: 16px;
+    }
+  </style>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+  <script src="http://classes.engineering.wustl.edu/cse330/content/calendar.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+  <div class="login" id="Login">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="login_btn">Log In</button> </div>
+  <div class="register" id="register">
+    <input type="text" id="regi_username" placeholder="Username" />
+    <input type="password" id="regi_password" placeholder="Password" />
+    <button id="register_btn">Register</button> </div>
+
+  <div class="logout" id="logout">
+    <button id="logout_btn">Log Out</button> </div>
+
+  <div id='month'></div>
+  <div id='year'></div>
+  <button id="prevM">Last Month</button>
+  <button id="nextM">Next Month</button>
+
+  <div class="month">
+    <ul>
+      <button id="prev_month_btn" class="prev">Previous Month</button>
+      <button id="next_month_btn" class="next">Next Month</button>
+      <li>
+        <span id="size"><span id="current_month"> </span> / <span id="current_year"> </span></span>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="weekdays">
+    <li>Sunday</li>
+    <li>Monday</li>
+    <li>Tuesday</li>
+    <li>Wednesday</li>
+    <li>Thursday</li>
+    <li>Friday</li>
+    <li>Saturday</li>
+  </ul>
+
+  <ul class="days" id="days">
+
+  </ul>
+
+  <div class="display_events" id="display_events"></div>
+
+  </br>
+  <div id=addEvent>
+    Add an Event!
+    <br>Name of the Event:
+    <input id=content type=text>
+    <br>
+    When does it start?
+    <input id=start type=datetime-local>
+    <br>
+    When does it end?
+    <input id=end type=time>
+    <br>
+    <button id="addbtn">Add Event</button> </div>
+
+  Event Tags:
+  <select id="tag">
+    <option> </option>
+    <option value="holiday">Holiday</option>
+    <option value="birthday">Birthday</option>
+    <option value="exam">Exam</option>
+    <option value="important">Important</option>
+  </select><br>
+  <div id="search">
+    Search by Tag:
+    <input type="radio" name="searchtag" id="h" value="holiday">Holiday
+    <input type="radio" name="searchtag" id="b" value="birthday">Birthday
+    <input type="radio" name="searchtag" id="e" value="exam">Exam
+    <input type="radio" name="searchtag" id="i" value="important">Important
+    <button id="search">search</button>
+    <div id="results"></div>
+  </div>
+
+
+
+  <script src="main.js"></script>
+  <script src="ajax.js"></script> <!-- load the JavaScript file -->
+</body>
+
+</html>
