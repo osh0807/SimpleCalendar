@@ -3,5 +3,6 @@ Authors: Soohoon Oh; soohoonoh@wustl.edu
 
 Simple Calendar (Web app)
 
-- users can register/login/logout
-- 
+- Users can register/login/logout
+- Users can post/edit/delete events
+- Multiple users can share the same events
